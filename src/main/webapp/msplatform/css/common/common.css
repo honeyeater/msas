@@ -1,0 +1,159 @@
+/* 左侧树形,需要在iframe标签中加上  frameborder="0"来去除边框*/
+.iframe1 {
+	border: 0;
+	width: 200;
+	display: block;
+	scrolling: auto;
+}
+
+/* 主页面iframe,需要在iframe标签中加上  frameborder="0"来去除边框*/
+.iframe2 {
+	border: 0;
+	width: 100%;
+	height: 100%;
+	display: block;
+	font-size: 12px;
+}
+
+.iframe3 {
+	border: 0;
+	width: 100%;
+	height: 96%;
+	display: block;
+}
+
+/* 主页面背景颜色、滚动条设置  */
+.body1 {
+	background-color: #fff;
+	/* scrolling: no;  */
+	text-align: center;
+}
+
+/* 设置表单宽度*/
+.table {
+	width: 100%
+}
+/* 每个表单页面最上方标题行背景设置*/
+.table1 {
+	width: 100%;
+	border: 0;
+	jerry: expression(cellSpacing ="0");
+	padd:expression(this.cellPadding="0");
+}
+
+/* 表单内所有内容居中显示*/
+td {
+	text-align: center;
+}
+
+/* 当前位置字体、颜色设置*/
+.td1 {
+	text-align: left;	
+	font-size: 12;
+	color: #646465;
+	width: 20%;
+	height:20px;
+}
+
+/* 标题栏背景设置*/
+.tr_title {
+	background-color: #f2f2f2;
+	height: 35px;
+}
+
+/* 设置添加 图片按钮样式*/
+.img_button1 {
+	width: 70;
+	height: 26;
+	cursor: pointer;
+	vertical-align: middle;
+}
+
+/* 设置编辑、删除图片按钮样式*/
+.img_button2 {
+	border: 0;
+	width: 16;
+	height: 16;
+	cursor: pointer;
+	vertical-align: middle;
+	color:#0079ff;
+}
+/* 表单样式*/
+.table2 {
+	width: 100%;
+	height: 22px;
+	border: none;
+	font-size: 14px;
+	color: #646465;
+	background-color: #fff;
+	jerry: expression(cellSpacing ="1");
+	padd:expression(this.cellPadding="0");
+	border-top:1px solid #ccc; border-left:1px solid #ccc;
+}
+.table2 tr td {border-bottom:1px solid #ccc; border-right:1px solid #ccc;}
+/* 表单隔行换色*/
+#bg	td,th {
+	height: 35px;
+	background: expression((this.parentNode.rowIndex)%2==0?"#ecf2f6":"#FFFFFF" 
+		);
+}
+
+/* 链接不显示下划线*/
+a {
+	text-decoration: none;
+}
+
+/* 对于表单过长内容用...显示*/
+td div {
+	width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+
+
+
+/* 当前位置字体、颜色设置*/
+.td2 {
+	text-align: left;
+	font-size: 12px;
+	color: #646465;
+	width: 25%
+}
+
+/*******2015-09-15add*******/
+body,th,td,input,select,textarea,h1,h2,h3,h4,font,.spans{ font:12px "microsoft yahei",Tahoma, Geneva, sans-serif; font-weight:normal;}
+.td2 input{ width:148px; height:28px; line-height:28px; border:1px solid #ccc;}
+.td2 select{ width:128px; height:28px; line-height:28px; border:1px solid #ccc;}
+.td2 input.cx{ width:60px;  background:url(../../images/common/icon-2.png) no-repeat; background-position:0 -100px; color:#0079ff; text-align:center; border:none; font-size:14px; cursor:pointer; }
+.td2 input.cx:hover{ background:url(../../images/common/icon.png) no-repeat; background-position:0 0; color:#fff;}
+.two_btu{ position:absolute;top:0px; left:3px;}
+.two_btu input{width:60px; hright:28px; line-height:28px; text-align:center; color:#fff; font-size:14px; border-radius:3px; background-color:#0079ff; border:none; margin-right:5px; cursor:pointer;}
+.two_btu input.btu_del{ border:1px solid #ddd; background-color:#fff; color:#666;}
+.table2{border-collapse:collapse;border-spacing:0;}
+.page_tab{font-size:12px; color: #666161;position:absolute; top:0px; right:0;}
+.page_tab td .td_span{width:38px; height:28px; line-height:28px; border:1px solid #ddd; display:block;}
+.page_tab td input.GO{ width:45px; height:28px; line-height:28px; background-color:#f0f0f0; border:none; text-align:center; color:#666; border-radius:3px; cursor:pointer;}
+.page_tab td a{ color:#666;}
+.table_ph{ border:none; padding:10px 0;}
+.table_ph tr td{ border:none;}
+.body_Bg{ background:url(../../images/common/content_bg.jpg);}
+.div_task{ background-color:#fff;}
+.div_task h3{ height:30px; line-height:30px; color:#999; background-color:#f6f6f6;}
+.div_task a{ font-size:12px; display:block; color:#e60044; float:left; height:20px; line-height:18px; margin-right:5px;}
+.dl_con dt{ float:left; width:62px; text-align:right; line-height:25px;}
+.dl_con dd{ line-height:25px;}
+.twoBtu{ margin-top:7px;  border-bottom:1px solid #ddd; padding-bottom:10px; margin:10px 5px;}
+.twoBtu input{ width:30px; height:22px; line-height:20px; border:1px solid #ccc; text-align:center; margin-right:5px; background-color:#fff; cursor:pointer; border-radius:3px;}
+.twoBtu input.marR0{ margin-right:0;}
+.img_button2Link{
+	border: 0;
+	width: 88px;
+	height: 28px;
+	cursor: pointer;
+	vertical-align: middle; color:#0079ff;
+	background:url(../../images/common/icon-2.png) no-repeat; 
+	background-position:0 -50px; 
+	border:none; 
+   }

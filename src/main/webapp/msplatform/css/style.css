@@ -1,0 +1,61 @@
+@charset "utf-8";
+body { margin:0; padding:0; width:100%;}
+html { padding:0; margin:0;}
+
+/* main */
+
+
+/********** header **********/
+.header { background:#e1ecef; padding:0; margin:0 auto; }
+
+.block_header {margin:0 auto; width:986px; padding:0;}
+#logo2{
+	margin-right:120px;
+	margin-top: -45px;
+	margin-bottom: 0px;
+	background: url(../images/name_06.jpg) no-repeat;
+	width:285px;
+	height:40px;
+	float:right;
+}
+#logo{
+	position:relative;
+	margin-left:240px;
+	margin-top: -1px;
+	margin-bottom: 0px;
+	background: url(../images/logo_03.jpg) no-repeat;
+	width:170px;
+	height:45px;
+}
+/********** slider **********/
+.slider_top {margin:0 auto; padding:0;}
+
+/********** slider **********/
+.header_text2 { margin:0 auto; padding:29px 0 0 0; height:72px; width:984px; background: url(../images/xiantiao_03.jpg) center repeat-y;}
+.header_text2 h2 { padding:0 0 0 25px; margin:0; font: normal 36px Arial, Helvetica, sans-serif; color:#5c8783;}
+.header_text2 img { float:right; margin:0; padding:10px 20px 0 0;}
+/* top_bg */
+.top_bg { background:url(../images/top_bg.gif) top repeat-x; margin:0; padding:0;}
+.top_bg2 { background:url(../images/top_bg2.gif) top repeat-x; margin:0; padding:0; height:23px}
+.top_bg_resize { width:986px; margin:0 auto; padding:0;}
+.top_bg_resize img { float:left; margin:0; padding:0;}
+
+/********** block index **********/
+.body { margin-top:-4px; padding:0px 0 20px 0;}
+.body_resize { width:954px; margin:0 auto; padding:0 15px; background:url(../images/xiantiao_03.jpg) center repeat-y}
+.body_resize h2 { font:normal 12px 宋体, Helvetica, sans-serif; color:#747474; padding:5px 5px; margin:0;text-align:center;}
+.body_resize h3 { font:normal 12px 宋体, Helvetica, sans-serif; color:#747474; padding:5px 5px; margin:0; text-align:center;}
+.body_resize h4 { font:normal 12px 宋体, Helvetica, sans-serif; color:#747474; padding:5px 5px; margin:0; text-align:center;}
+.body_resize h5 { font:normal 12px 宋体, Helvetica, sans-serif; color:#747474; padding:5px 5px; margin:0; text-align:center;}
+.body_resize p { font:normal 12px Arial, Helvetica, sans-serif; color:#747474; padding:10px 5px; margin:0; line-height:1.8em;}
+.body_resize p span { color:#819e9c;}
+
+
+.body_resize img { float:left; margin:20px 10px; padding:0;}
+.body_resize img.floated { float:left; margin:10px 5px; padding:0;}
+.left  { width:530px; margin-left:200px; padding:10px 10px;} 
+.blog { width:280px; float:left; margin:0; padding:10px;}
+
+
+p.clr, .clr { clear:both; padding:0; margin:0; background:none;}
+li.bg, .bg { clear:both; border-top:1px solid #dfdfdf; padding:0; margin:10px 0; background:none; line-height:0;}

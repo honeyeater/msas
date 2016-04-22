@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sinosoft.msas.dao.PrpMcodeMapper" >
+  <resultMap id="BaseResultMap" type="com.sinosoft.msas.domain.PrpMcode" >
+    <id column="CODETYPE" property="codetype" jdbcType="VARCHAR" />
+    <id column="CODECODE" property="codecode" jdbcType="VARCHAR" />
+    <result column="CODECNAME" property="codecname" jdbcType="VARCHAR" />
+    <result column="CODEENAME" property="codeename" jdbcType="VARCHAR" />
+    <result column="NEWCODETYPE" property="newcodetype" jdbcType="VARCHAR" />
+    <result column="NEWCODECODE" property="newcodecode" jdbcType="VARCHAR" />
+    <result column="VALIDSTATUS" property="validstatus" jdbcType="VARCHAR" />
+    <result column="FLAG" property="flag" jdbcType="VARCHAR" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="map" >
+    delete from PRPMCODE
+    where CODETYPE = #{codetype,jdbcType=VARCHAR}
+      and CODECODE = #{codecode,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.sinosoft.msas.domain.PrpMcode" >
+    insert into PRPMCODE (CODETYPE, CODECODE, CODECNAME, 
+      CODEENAME, NEWCODETYPE, NEWCODECODE, 
+      VALIDSTATUS, FLAG)
+    values (#{codetype,jdbcType=VARCHAR}, #{codecode,jdbcType=VARCHAR}, #{codecname,jdbcType=VARCHAR}, 
+      #{codeename,jdbcType=VARCHAR}, #{newcodetype,jdbcType=VARCHAR}, #{newcodecode,jdbcType=VARCHAR}, 
+      #{validstatus,jdbcType=VARCHAR}, #{flag,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.sinosoft.msas.domain.PrpMcode" >
+    update PRPMCODE
+    set CODECNAME = #{codecname,jdbcType=VARCHAR},
+      CODEENAME = #{codeename,jdbcType=VARCHAR},
+      NEWCODETYPE = #{newcodetype,jdbcType=VARCHAR},
+      NEWCODECODE = #{newcodecode,jdbcType=VARCHAR},
+      VALIDSTATUS = #{validstatus,jdbcType=VARCHAR},
+      FLAG = #{flag,jdbcType=VARCHAR}
+    where CODETYPE = #{codetype,jdbcType=VARCHAR}
+      and CODECODE = #{codecode,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="map" >
+    select CODETYPE, CODECODE, CODECNAME, CODEENAME, NEWCODETYPE, NEWCODECODE, VALIDSTATUS, 
+    FLAG
+    from PRPMCODE
+    where CODETYPE = #{codetype,jdbcType=VARCHAR}
+      and CODECODE = #{codecode,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select CODETYPE, CODECODE, CODECNAME, CODEENAME, NEWCODETYPE, NEWCODECODE, VALIDSTATUS, 
+    FLAG
+    from PRPMCODE
+  </select>
+</mapper>

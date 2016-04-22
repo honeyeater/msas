@@ -1,0 +1,24 @@
+.imageSlider1 { margin:0;padding:0; height:17px;width:132px; background-image:url("../images/scrollbg.gif"); }
+.imageBar1    { margin:0;padding:0; height:17px; width:10px; background-image:url("../images/scrfloat.gif"); }
+
+
+.imageSlider2 { margin:0;padding:0; height:14px; width:137px; background-image:url("../images/imageparambar.gif"); }
+.imageBar2    { margin:0;padding:0; height:14px; width:10px; background-image:url("../images/thumb.gif"); }
+
+.imageSlider3 { margin:0;padding:0; height:14px; width:137px; background-image:url("../images/imageparambar.gif"); }
+.imageBar3    { margin:0;padding:0; height:14px; width:10px; background-image:url("../images/thumb.gif"); }
+
+
+.imageSlider4 { margin:0;padding:0; height:14px; width:137px; background-image:url("../images/imageparambar.gif"); }
+.imageBar4    { margin:0;padding:0; height:14px; width:10px; background-image:url("../images/thumb.gif"); }
+
+.imageSlider5 { margin:0;padding:0; height:8px; width:103px; background-image:url("../images/speedbar.gif"); }
+.imageBar5    { margin:0;padding:0; height:8px; width:10px; background-image:url("../images/thumb.gif"); }
+
+.imageSlider6 { margin:0;padding:0; height:8px; width:80px; background-image:url("../images/soundslider.gif"); }
+.imageBar6    { margin:0;padding:0; height:8px; width:15px; background-image:url("../images/soundthumb.gif"); }
+
+
+.imageSlider7 { margin:0;padding:0; height:8px; width:expression(body.clientWidth-189-320-12); background-image:url("../images/playbackslider.gif"); background-repeat:repeat;}
+.imageBar7    { margin:0;padding:0; height:15px; width:15px; background-image:url("../images/playbackthumb.gif"); }
+

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jaxws="http://cxf.apache.org/jaxws"  
+	xmlns:task="http://www.springframework.org/schema/task"  
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+           http://www.springframework.org/schema/aop 
+           http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+           http://www.springframework.org/schema/tx
+     	   http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-4.0.xsd
+           http://www.springframework.org/schema/task   
+   		   http://www.springframework.org/schema/task/spring-task-4.0.xsd
+   		   http://www.springframework.org/schema/mvc
+   		   http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
+
+	<!-- 采用注释的方式配置bean -->
+	<context:annotation-config />
+	
+	<!-- 定义自动扫描，根路径为com.sinosoft.msas，不使用默认的扫描方式 -->
+    <context:component-scan base-package="com.sinosoft.msas" />
+    
+	<!--启动对@AspectJ注解的支持,proxy-target-class="true"强制使用cglib代理,如果为false则spring会自动选择-->
+	<aop:aspectj-autoproxy />
+	
+	<bean id="applicationContext" class="org.apache.axis2.extensions.spring.receivers.ApplicationContextHolder" />
+	
+	<!-- 引入配置文件 -->
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE" />
+		<property name="ignoreResourceNotFound" value="true" />
+		<property name="locations">
+			<list>
+				<!-- 数据库配置 -->
+				<value>classpath*:config/jdbc.properties</value>
+				<!-- 应用配置 -->
+				<value>classpath*:config/application.properties</value>
+				<!-- 图片环境配置 -->
+				<value>classpath*:config/imageurl.properties</value>
+			</list>
+		</property>
+	</bean>
+	
+    <!-- 配置数据源 -->
+	<bean name="mydataSource" class="com.alibaba.druid.pool.DruidDataSource"
+	    init-method="init" destroy-method="close">
+		<property name="url" value="${jdbc_url}" />
+		<property name="username" value="${jdbc_username}" />
+		<property name="password" value="${jdbc_password}" />
+        <!-- 数据库密码加密 
+        <property name="filters" value="config" />
+        <property name="connectionProperties" value="config.decrypt=true" />
+        -->
+		<!-- 初始化连接大小 -->
+		<property name="initialSize" value="5" />
+		<!-- 连接池最大使用连接数量 -->
+		<property name="maxActive" value="20" />
+		<!-- 连接池最大空闲 -->
+		<property name="maxIdle" value="20" />
+		<!-- 连接池最小空闲 -->
+		<property name="minIdle" value="0" />
+		<!-- 获取连接最大等待时间 -->
+		<property name="maxWait" value="60000" />
+
+		<property name="validationQuery" value="${validationQuery}" />
+		<property name="testOnBorrow" value="false" />
+		<property name="testOnReturn" value="false" />
+		<property name="testWhileIdle" value="true" />
+		
+		<!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
+		<property name="timeBetweenEvictionRunsMillis" value="60000" />
+		<!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
+		<property name="minEvictableIdleTimeMillis" value="25200000" />
+
+		<!-- 打开removeAbandoned功能 -->
+		<property name="removeAbandoned" value="true" />
+		<!-- 1800秒，也就是30分钟 -->
+		<property name="removeAbandonedTimeout" value="1800" />
+		<!-- 关闭abanded连接时输出错误日志 -->
+		<property name="logAbandoned" value="true" />
+		<property name="proxyFilters">
+	        <list>
+	            <ref bean="stat-filter" />
+	            <ref bean="wall-filter" />
+	            <ref bean="log-filter" />
+	        </list>
+	    </property>
+	</bean>
+	<!-- druid 日志输出filter -->
+	<bean id="log-filter" class="com.alibaba.druid.filter.logging.Log4jFilter">
+ 		<property name="statementExecutableSqlLogEnable" value="true" />
+ 		<property name="resultSetLogEnabled" value="false" />
+ 		<property name="statementLogEnabled" value="false" />
+ 		<property name="connectionLogEnabled" value="false" />
+ 		<property name="dataSourceLogEnabled" value="false" />
+    </bean>
+    <!-- druid web监控filter -->
+    <bean id="stat-filter" class="com.alibaba.druid.filter.stat.StatFilter">
+    	<property name="slowSqlMillis" value="10000" />
+    	<property name="logSlowSql" value="true" />
+	</bean>
+    <!-- druid 防止SQL注入filter -->
+    <bean id="wall-filter" class="com.alibaba.druid.wall.WallFilter">
+     	<property name="dbType" value="mysql" />
+		<property name="logViolation" value="true"/>
+ 		<property name="throwException" value="false"/>
+    </bean>
+    
+	<!-- SqlSessionFactory -->
+  	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+    	<property name="dataSource" ref="mydataSource" />
+    	<property name="configLocation" value="classpath:mybatis/mybatis-config.xml"></property>
+	</bean>
+  
+  	<!-- 配置扫描器 -->
+  	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+    	<!-- 扫描这个包以及它的子包下的所有映射接口类 -->
+        <property name="basePackage" value="com.sinosoft.msas.dao" />
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
+  	</bean>
+  
+  	<!-- 事务相关控制 -->
+  	<bean name="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">     
+    	<property name="dataSource" ref="mydataSource"></property>
+  	</bean>     
+  	<tx:advice id="transactionAdvice"  transaction-manager="transactionManager">
+		<tx:attributes>
+	    	<tx:method name="insert*" propagation="REQUIRED" />
+			<tx:method name="add*" propagation="REQUIRED"/>
+			<tx:method name="save*" propagation="REQUIRED"/>
+			<tx:method name="delete*" propagation="REQUIRED" />
+			<tx:method name="update*" propagation="REQUIRED" />
+			
+			<tx:method name="find*" propagation="SUPPORTS"/>
+			<tx:method name="get*" propagation="SUPPORTS"/>
+			<tx:method name="select*" propagation="SUPPORTS"/>
+    	</tx:attributes>
+	</tx:advice>
+	
+   	<!-- 把事务控制在Service层 -->
+	<aop:config>    
+		<aop:pointcut id="serviceOperation" expression="execution(public * com.sinosoft.msas.service.impl.*.*(..))" />  
+	    <aop:advisor pointcut-ref="serviceOperation" advice-ref="transactionAdvice" />  
+	</aop:config>
+ 	
+ 	<bean id="helloWorld" class="com.sinosoft.msas.services.HelloWorldService"></bean>
+ 	
+</beans>

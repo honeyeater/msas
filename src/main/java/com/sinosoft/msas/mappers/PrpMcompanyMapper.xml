@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sinosoft.msas.dao.PrpMcompanyMapper" >
+  <resultMap id="BaseResultMap" type="com.sinosoft.msas.domain.PrpMcompany" >
+    <id column="COMCODE" property="comcode" jdbcType="VARCHAR" />
+    <result column="COMCNAME" property="comcname" jdbcType="VARCHAR" />
+    <result column="COMENAME" property="comename" jdbcType="VARCHAR" />
+    <result column="ADDRESSCNAME" property="addresscname" jdbcType="VARCHAR" />
+    <result column="ADDRESSENAME" property="addressename" jdbcType="VARCHAR" />
+    <result column="POSTCODE" property="postcode" jdbcType="VARCHAR" />
+    <result column="PHONENUMBER" property="phonenumber" jdbcType="VARCHAR" />
+    <result column="FAXNUMBER" property="faxnumber" jdbcType="VARCHAR" />
+    <result column="UPPERCOMCODE" property="uppercomcode" jdbcType="VARCHAR" />
+    <result column="INSURERNAME" property="insurername" jdbcType="VARCHAR" />
+    <result column="COMTYPE" property="comtype" jdbcType="VARCHAR" />
+    <result column="COMFLAG" property="comflag" jdbcType="VARCHAR" />
+    <result column="CENTERFLAG" property="centerflag" jdbcType="VARCHAR" />
+    <result column="COMLEVEL" property="comlevel" jdbcType="DECIMAL" />
+    <result column="BRANCHTYPE" property="branchtype" jdbcType="VARCHAR" />
+    <result column="UPPERPATH" property="upperpath" jdbcType="VARCHAR" />
+    <result column="COMCODECIRC" property="comcodecirc" jdbcType="VARCHAR" />
+    <result column="LICENSENO" property="licenseno" jdbcType="VARCHAR" />
+    <result column="EMAIL" property="email" jdbcType="VARCHAR" />
+    <result column="REMARK1" property="remark1" jdbcType="VARCHAR" />
+    <result column="COMKIND" property="comkind" jdbcType="VARCHAR" />
+    <result column="MANAGER" property="manager" jdbcType="VARCHAR" />
+    <result column="ACCOUNTANT" property="accountant" jdbcType="VARCHAR" />
+    <result column="REMARK" property="remark" jdbcType="VARCHAR" />
+    <result column="NEWCOMCODE" property="newcomcode" jdbcType="VARCHAR" />
+    <result column="VALIDDATE" property="validdate" jdbcType="VARCHAR" />
+    <result column="INVALIDDATE" property="invaliddate" jdbcType="VARCHAR" />
+    <result column="VALIDSTATUS" property="validstatus" jdbcType="VARCHAR" />
+    <result column="ACNTUNIT" property="acntunit" jdbcType="VARCHAR" />
+    <result column="ARTICLECODE" property="articlecode" jdbcType="VARCHAR" />
+    <result column="UPDATEFLAG" property="updateflag" jdbcType="VARCHAR" />
+    <result column="UPDATEDATE" property="updatedate" jdbcType="TIMESTAMP" />
+    <result column="OPERATORCOMCODE" property="operatorcomcode" jdbcType="VARCHAR" />
+    <result column="FLAG" property="flag" jdbcType="VARCHAR" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from PRPMCOMPANY
+    where COMCODE = #{comcode,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.sinosoft.msas.domain.PrpMcompany" >
+    insert into PRPMCOMPANY (COMCODE, COMCNAME, COMENAME, 
+      ADDRESSCNAME, ADDRESSENAME, POSTCODE, 
+      PHONENUMBER, FAXNUMBER, UPPERCOMCODE, 
+      INSURERNAME, COMTYPE, COMFLAG, 
+      CENTERFLAG, COMLEVEL, BRANCHTYPE, 
+      UPPERPATH, COMCODECIRC, LICENSENO, 
+      EMAIL, REMARK1, COMKIND, 
+      MANAGER, ACCOUNTANT, REMARK, 
+      NEWCOMCODE, VALIDDATE, INVALIDDATE, 
+      VALIDSTATUS, ACNTUNIT, ARTICLECODE, 
+      UPDATEFLAG, UPDATEDATE, OPERATORCOMCODE, 
+      FLAG)
+    values (#{comcode,jdbcType=VARCHAR}, #{comcname,jdbcType=VARCHAR}, #{comename,jdbcType=VARCHAR}, 
+      #{addresscname,jdbcType=VARCHAR}, #{addressename,jdbcType=VARCHAR}, #{postcode,jdbcType=VARCHAR}, 
+      #{phonenumber,jdbcType=VARCHAR}, #{faxnumber,jdbcType=VARCHAR}, #{uppercomcode,jdbcType=VARCHAR}, 
+      #{insurername,jdbcType=VARCHAR}, #{comtype,jdbcType=VARCHAR}, #{comflag,jdbcType=VARCHAR}, 
+      #{centerflag,jdbcType=VARCHAR}, #{comlevel,jdbcType=DECIMAL}, #{branchtype,jdbcType=VARCHAR}, 
+      #{upperpath,jdbcType=VARCHAR}, #{comcodecirc,jdbcType=VARCHAR}, #{licenseno,jdbcType=VARCHAR}, 
+      #{email,jdbcType=VARCHAR}, #{remark1,jdbcType=VARCHAR}, #{comkind,jdbcType=VARCHAR}, 
+      #{manager,jdbcType=VARCHAR}, #{accountant,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, 
+      #{newcomcode,jdbcType=VARCHAR}, #{validdate,jdbcType=VARCHAR}, #{invaliddate,jdbcType=VARCHAR}, 
+      #{validstatus,jdbcType=VARCHAR}, #{acntunit,jdbcType=VARCHAR}, #{articlecode,jdbcType=VARCHAR}, 
+      #{updateflag,jdbcType=VARCHAR}, #{updatedate,jdbcType=TIMESTAMP}, #{operatorcomcode,jdbcType=VARCHAR}, 
+      #{flag,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.sinosoft.msas.domain.PrpMcompany" >
+    update PRPMCOMPANY
+    set COMCNAME = #{comcname,jdbcType=VARCHAR},
+      COMENAME = #{comename,jdbcType=VARCHAR},
+      ADDRESSCNAME = #{addresscname,jdbcType=VARCHAR},
+      ADDRESSENAME = #{addressename,jdbcType=VARCHAR},
+      POSTCODE = #{postcode,jdbcType=VARCHAR},
+      PHONENUMBER = #{phonenumber,jdbcType=VARCHAR},
+      FAXNUMBER = #{faxnumber,jdbcType=VARCHAR},
+      UPPERCOMCODE = #{uppercomcode,jdbcType=VARCHAR},
+      INSURERNAME = #{insurername,jdbcType=VARCHAR},
+      COMTYPE = #{comtype,jdbcType=VARCHAR},
+      COMFLAG = #{comflag,jdbcType=VARCHAR},
+      CENTERFLAG = #{centerflag,jdbcType=VARCHAR},
+      COMLEVEL = #{comlevel,jdbcType=DECIMAL},
+      BRANCHTYPE = #{branchtype,jdbcType=VARCHAR},
+      UPPERPATH = #{upperpath,jdbcType=VARCHAR},
+      COMCODECIRC = #{comcodecirc,jdbcType=VARCHAR},
+      LICENSENO = #{licenseno,jdbcType=VARCHAR},
+      EMAIL = #{email,jdbcType=VARCHAR},
+      REMARK1 = #{remark1,jdbcType=VARCHAR},
+      COMKIND = #{comkind,jdbcType=VARCHAR},
+      MANAGER = #{manager,jdbcType=VARCHAR},
+      ACCOUNTANT = #{accountant,jdbcType=VARCHAR},
+      REMARK = #{remark,jdbcType=VARCHAR},
+      NEWCOMCODE = #{newcomcode,jdbcType=VARCHAR},
+      VALIDDATE = #{validdate,jdbcType=VARCHAR},
+      INVALIDDATE = #{invaliddate,jdbcType=VARCHAR},
+      VALIDSTATUS = #{validstatus,jdbcType=VARCHAR},
+      ACNTUNIT = #{acntunit,jdbcType=VARCHAR},
+      ARTICLECODE = #{articlecode,jdbcType=VARCHAR},
+      UPDATEFLAG = #{updateflag,jdbcType=VARCHAR},
+      UPDATEDATE = #{updatedate,jdbcType=TIMESTAMP},
+      OPERATORCOMCODE = #{operatorcomcode,jdbcType=VARCHAR},
+      FLAG = #{flag,jdbcType=VARCHAR}
+    where COMCODE = #{comcode,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select COMCODE, COMCNAME, COMENAME, ADDRESSCNAME, ADDRESSENAME, POSTCODE, PHONENUMBER, 
+    FAXNUMBER, UPPERCOMCODE, INSURERNAME, COMTYPE, COMFLAG, CENTERFLAG, COMLEVEL, BRANCHTYPE, 
+    UPPERPATH, COMCODECIRC, LICENSENO, EMAIL, REMARK1, COMKIND, MANAGER, ACCOUNTANT, 
+    REMARK, NEWCOMCODE, VALIDDATE, INVALIDDATE, VALIDSTATUS, ACNTUNIT, ARTICLECODE, UPDATEFLAG, 
+    UPDATEDATE, OPERATORCOMCODE, FLAG
+    from PRPMCOMPANY
+    where COMCODE = #{comcode,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select COMCODE, COMCNAME, COMENAME, ADDRESSCNAME, ADDRESSENAME, POSTCODE, PHONENUMBER, 
+    FAXNUMBER, UPPERCOMCODE, INSURERNAME, COMTYPE, COMFLAG, CENTERFLAG, COMLEVEL, BRANCHTYPE, 
+    UPPERPATH, COMCODECIRC, LICENSENO, EMAIL, REMARK1, COMKIND, MANAGER, ACCOUNTANT, 
+    REMARK, NEWCOMCODE, VALIDDATE, INVALIDDATE, VALIDSTATUS, ACNTUNIT, ARTICLECODE, UPDATEFLAG, 
+    UPDATEDATE, OPERATORCOMCODE, FLAG
+    from PRPMCOMPANY
+  </select>
+</mapper>

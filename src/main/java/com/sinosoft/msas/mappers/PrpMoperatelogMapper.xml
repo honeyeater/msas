@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sinosoft.msas.dao.PrpMoperatelogMapper" >
+  <resultMap id="BaseResultMap" type="com.sinosoft.msas.domain.PrpMoperatelog" >
+    <id column="UUID" property="uuid" jdbcType="VARCHAR" />
+    <result column="USERCODE" property="usercode" jdbcType="VARCHAR" />
+    <result column="USERNAME" property="username" jdbcType="VARCHAR" />
+    <result column="OPERATEDATE" property="operatedate" jdbcType="TIMESTAMP" />
+    <result column="SERIALNO" property="serialno" jdbcType="DECIMAL" />
+    <result column="OPERATETYPE" property="operatetype" jdbcType="VARCHAR" />
+    <result column="OPERATETIME" property="operatetime" jdbcType="TIMESTAMP" />
+    <result column="APPLICATIONNO" property="applicationno" jdbcType="VARCHAR" />
+    <result column="LOGMSG" property="logmsg" jdbcType="VARCHAR" />
+    <result column="REMARK" property="remark" jdbcType="VARCHAR" />
+    <result column="SIGNATUREID" property="signatureid" jdbcType="VARCHAR" />
+    <result column="CLSNAME" property="clsname" jdbcType="VARCHAR" />
+    <result column="METHODNAME" property="methodname" jdbcType="VARCHAR" />
+    <result column="PARAM" property="param" jdbcType="VARCHAR" />
+    <result column="LOGTYPE" property="logtype" jdbcType="VARCHAR" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from PRPMOPERATELOG
+    where UUID = #{uuid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.sinosoft.msas.domain.PrpMoperatelog" >
+    insert into PRPMOPERATELOG (UUID, USERCODE, USERNAME, 
+      OPERATEDATE, SERIALNO, OPERATETYPE, 
+      OPERATETIME, APPLICATIONNO, LOGMSG, 
+      REMARK, SIGNATUREID, CLSNAME, 
+      METHODNAME, PARAM, LOGTYPE
+      )
+    values (#{uuid,jdbcType=VARCHAR}, #{usercode,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR}, 
+      #{operatedate,jdbcType=TIMESTAMP}, #{serialno,jdbcType=DECIMAL}, #{operatetype,jdbcType=VARCHAR}, 
+      #{operatetime,jdbcType=TIMESTAMP}, #{applicationno,jdbcType=VARCHAR}, #{logmsg,jdbcType=VARCHAR}, 
+      #{remark,jdbcType=VARCHAR}, #{signatureid,jdbcType=VARCHAR}, #{clsname,jdbcType=VARCHAR}, 
+      #{methodname,jdbcType=VARCHAR}, #{param,jdbcType=VARCHAR}, #{logtype,jdbcType=VARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.sinosoft.msas.domain.PrpMoperatelog" >
+    update PRPMOPERATELOG
+    set USERCODE = #{usercode,jdbcType=VARCHAR},
+      USERNAME = #{username,jdbcType=VARCHAR},
+      OPERATEDATE = #{operatedate,jdbcType=TIMESTAMP},
+      SERIALNO = #{serialno,jdbcType=DECIMAL},
+      OPERATETYPE = #{operatetype,jdbcType=VARCHAR},
+      OPERATETIME = #{operatetime,jdbcType=TIMESTAMP},
+      APPLICATIONNO = #{applicationno,jdbcType=VARCHAR},
+      LOGMSG = #{logmsg,jdbcType=VARCHAR},
+      REMARK = #{remark,jdbcType=VARCHAR},
+      SIGNATUREID = #{signatureid,jdbcType=VARCHAR},
+      CLSNAME = #{clsname,jdbcType=VARCHAR},
+      METHODNAME = #{methodname,jdbcType=VARCHAR},
+      PARAM = #{param,jdbcType=VARCHAR},
+      LOGTYPE = #{logtype,jdbcType=VARCHAR}
+    where UUID = #{uuid,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select UUID, USERCODE, USERNAME, OPERATEDATE, SERIALNO, OPERATETYPE, OPERATETIME, 
+    APPLICATIONNO, LOGMSG, REMARK, SIGNATUREID, CLSNAME, METHODNAME, PARAM, LOGTYPE
+    from PRPMOPERATELOG
+    where UUID = #{uuid,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select UUID, USERCODE, USERNAME, OPERATEDATE, SERIALNO, OPERATETYPE, OPERATETIME, 
+    APPLICATIONNO, LOGMSG, REMARK, SIGNATUREID, CLSNAME, METHODNAME, PARAM, LOGTYPE
+    from PRPMOPERATELOG
+  </select>
+</mapper>

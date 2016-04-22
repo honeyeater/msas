@@ -1,0 +1,32 @@
+body{
+	
+}
+.input-xlarge{
+  box-shadow: 0 0 6px #369bd7;
+  width:300px;
+  height:25px;
+	color: #333;
+	background: #fff;
+	border: 1px solid #ccc;
+	font-family: Tahoma, Geneva, sans-serif;
+    font-size: 16px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	font-size:20px;
+	float:right;
+	
+}
+.input-xlarge:hover{
+	border:1px solid green;
+}
+.control-label{float:left;widht:50px;padding:8px 0 }
+.control-group{font-family:"Î¢ÈíÑÅºÚ",Arial, Helvetica, sans-serif;margin:15px;padding:18px 0}
+.form-horizontal{width:500px;float:left;}
+input{vertical-align:middle;padding: 3px 0 0 0;}
+input[type='button']{
+	width:130px;
+	height:40px
+}
+.right{float:right;width:700px}
+.textarea{width:655px; height:260px;margin:15px 15px}
+.phonesurvey{float:left; position:absolute;top:360px}

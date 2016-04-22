@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sinosoft.msas.dao.PrpMriskMapper" >
+  <resultMap id="BaseResultMap" type="com.sinosoft.msas.domain.PrpMrisk" >
+    <id column="RISKCODE" property="riskcode" jdbcType="VARCHAR" />
+    <result column="OLDRISKCODE" property="oldriskcode" jdbcType="VARCHAR" />
+    <result column="RISKCNAME" property="riskcname" jdbcType="VARCHAR" />
+    <result column="RISKSCNAME" property="riskscname" jdbcType="VARCHAR" />
+    <result column="RISKTNAME" property="risktname" jdbcType="VARCHAR" />
+    <result column="RISKENAME" property="riskename" jdbcType="VARCHAR" />
+    <result column="RISKSENAME" property="risksename" jdbcType="VARCHAR" />
+    <result column="RISKATTRIBUTE" property="riskattribute" jdbcType="VARCHAR" />
+    <result column="SALEAREALEVEL" property="salearealevel" jdbcType="VARCHAR" />
+    <result column="SALEAREACODE" property="saleareacode" jdbcType="VARCHAR" />
+    <result column="SALEAREANAME" property="saleareaname" jdbcType="VARCHAR" />
+    <result column="MATERIALCONTXT" property="materialcontxt" jdbcType="VARCHAR" />
+    <result column="CLASSCODE" property="classcode" jdbcType="VARCHAR" />
+    <result column="FRAMECODE" property="framecode" jdbcType="VARCHAR" />
+    <result column="REPORTNO" property="reportno" jdbcType="VARCHAR" />
+    <result column="PROJECTCODE" property="projectcode" jdbcType="VARCHAR" />
+    <result column="PLANIND" property="planind" jdbcType="VARCHAR" />
+    <result column="ACCOUNTLEVEL" property="accountlevel" jdbcType="VARCHAR" />
+    <result column="REINSLEVEL" property="reinslevel" jdbcType="VARCHAR" />
+    <result column="MANAGEMENTLEVEL" property="managementlevel" jdbcType="VARCHAR" />
+    <result column="STATLEVEL" property="statlevel" jdbcType="VARCHAR" />
+    <result column="AUDITFLAG" property="auditflag" jdbcType="VARCHAR" />
+    <result column="AGRICULTUREFLAG" property="agricultureflag" jdbcType="VARCHAR" />
+    <result column="POLICYFLAG" property="policyflag" jdbcType="VARCHAR" />
+    <result column="POLICYPROCESSFLAG" property="policyprocessflag" jdbcType="VARCHAR" />
+    <result column="ISFORCE" property="isforce" jdbcType="VARCHAR" />
+    <result column="REQUIREDFLAG" property="requiredflag" jdbcType="VARCHAR" />
+    <result column="CREATORCODE" property="creatorcode" jdbcType="VARCHAR" />
+    <result column="CREATETIME" property="createtime" jdbcType="TIMESTAMP" />
+    <result column="UPDATERCODE" property="updatercode" jdbcType="VARCHAR" />
+    <result column="UPDATETIME" property="updatetime" jdbcType="TIMESTAMP" />
+    <result column="VALIDDATE" property="validdate" jdbcType="TIMESTAMP" />
+    <result column="INVALIDDATE" property="invaliddate" jdbcType="TIMESTAMP" />
+    <result column="VALIDIND" property="validind" jdbcType="VARCHAR" />
+    <result column="TCOL1" property="tcol1" jdbcType="VARCHAR" />
+    <result column="TCOL2" property="tcol2" jdbcType="VARCHAR" />
+    <result column="TCOL3" property="tcol3" jdbcType="VARCHAR" />
+    <result column="REMARK" property="remark" jdbcType="VARCHAR" />
+    <result column="FLAG" property="flag" jdbcType="VARCHAR" />
+    <result column="RATEUNIT" property="rateunit" jdbcType="DECIMAL" />
+    <result column="SHORTRATEFLAG" property="shortrateflag" jdbcType="VARCHAR" />
+    <result column="CLASSFLAG" property="classflag" jdbcType="VARCHAR" />
+    <result column="RISKFLAG" property="riskflag" jdbcType="VARCHAR" />
+    <result column="AUTOPAYMENTFLAG" property="autopaymentflag" jdbcType="VARCHAR" />
+    <result column="ENDUPDATERCODE" property="endupdatercode" jdbcType="VARCHAR" />
+    <result column="OPERATETIMEFORHIS" property="operatetimeforhis" jdbcType="TIMESTAMP" />
+    <result column="POLICYTYPE" property="policytype" jdbcType="VARCHAR" />
+    <result column="PRODUCTVADLIDDATE" property="productvadliddate" jdbcType="TIMESTAMP" />
+    <result column="REVISEDATE" property="revisedate" jdbcType="TIMESTAMP" />
+    <result column="VALIDSTATUS" property="validstatus" jdbcType="VARCHAR" />
+    <result column="NEWRISKCODE" property="newriskcode" jdbcType="VARCHAR" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from PRPMRISK
+    where RISKCODE = #{riskcode,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.sinosoft.msas.domain.PrpMrisk" >
+    insert into PRPMRISK (RISKCODE, OLDRISKCODE, RISKCNAME, 
+      RISKSCNAME, RISKTNAME, RISKENAME, 
+      RISKSENAME, RISKATTRIBUTE, SALEAREALEVEL, 
+      SALEAREACODE, SALEAREANAME, MATERIALCONTXT, 
+      CLASSCODE, FRAMECODE, REPORTNO, 
+      PROJECTCODE, PLANIND, ACCOUNTLEVEL, 
+      REINSLEVEL, MANAGEMENTLEVEL, STATLEVEL, 
+      AUDITFLAG, AGRICULTUREFLAG, POLICYFLAG, 
+      POLICYPROCESSFLAG, ISFORCE, REQUIREDFLAG, 
+      CREATORCODE, CREATETIME, UPDATERCODE, 
+      UPDATETIME, VALIDDATE, INVALIDDATE, 
+      VALIDIND, TCOL1, TCOL2, 
+      TCOL3, REMARK, FLAG, 
+      RATEUNIT, SHORTRATEFLAG, CLASSFLAG, 
+      RISKFLAG, AUTOPAYMENTFLAG, ENDUPDATERCODE, 
+      OPERATETIMEFORHIS, POLICYTYPE, PRODUCTVADLIDDATE, 
+      REVISEDATE, VALIDSTATUS, NEWRISKCODE
+      )
+    values (#{riskcode,jdbcType=VARCHAR}, #{oldriskcode,jdbcType=VARCHAR}, #{riskcname,jdbcType=VARCHAR}, 
+      #{riskscname,jdbcType=VARCHAR}, #{risktname,jdbcType=VARCHAR}, #{riskename,jdbcType=VARCHAR}, 
+      #{risksename,jdbcType=VARCHAR}, #{riskattribute,jdbcType=VARCHAR}, #{salearealevel,jdbcType=VARCHAR}, 
+      #{saleareacode,jdbcType=VARCHAR}, #{saleareaname,jdbcType=VARCHAR}, #{materialcontxt,jdbcType=VARCHAR}, 
+      #{classcode,jdbcType=VARCHAR}, #{framecode,jdbcType=VARCHAR}, #{reportno,jdbcType=VARCHAR}, 
+      #{projectcode,jdbcType=VARCHAR}, #{planind,jdbcType=VARCHAR}, #{accountlevel,jdbcType=VARCHAR}, 
+      #{reinslevel,jdbcType=VARCHAR}, #{managementlevel,jdbcType=VARCHAR}, #{statlevel,jdbcType=VARCHAR}, 
+      #{auditflag,jdbcType=VARCHAR}, #{agricultureflag,jdbcType=VARCHAR}, #{policyflag,jdbcType=VARCHAR}, 
+      #{policyprocessflag,jdbcType=VARCHAR}, #{isforce,jdbcType=VARCHAR}, #{requiredflag,jdbcType=VARCHAR}, 
+      #{creatorcode,jdbcType=VARCHAR}, #{createtime,jdbcType=TIMESTAMP}, #{updatercode,jdbcType=VARCHAR}, 
+      #{updatetime,jdbcType=TIMESTAMP}, #{validdate,jdbcType=TIMESTAMP}, #{invaliddate,jdbcType=TIMESTAMP}, 
+      #{validind,jdbcType=VARCHAR}, #{tcol1,jdbcType=VARCHAR}, #{tcol2,jdbcType=VARCHAR}, 
+      #{tcol3,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, #{flag,jdbcType=VARCHAR}, 
+      #{rateunit,jdbcType=DECIMAL}, #{shortrateflag,jdbcType=VARCHAR}, #{classflag,jdbcType=VARCHAR}, 
+      #{riskflag,jdbcType=VARCHAR}, #{autopaymentflag,jdbcType=VARCHAR}, #{endupdatercode,jdbcType=VARCHAR}, 
+      #{operatetimeforhis,jdbcType=TIMESTAMP}, #{policytype,jdbcType=VARCHAR}, #{productvadliddate,jdbcType=TIMESTAMP}, 
+      #{revisedate,jdbcType=TIMESTAMP}, #{validstatus,jdbcType=VARCHAR}, #{newriskcode,jdbcType=VARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.sinosoft.msas.domain.PrpMrisk" >
+    update PRPMRISK
+    set OLDRISKCODE = #{oldriskcode,jdbcType=VARCHAR},
+      RISKCNAME = #{riskcname,jdbcType=VARCHAR},
+      RISKSCNAME = #{riskscname,jdbcType=VARCHAR},
+      RISKTNAME = #{risktname,jdbcType=VARCHAR},
+      RISKENAME = #{riskename,jdbcType=VARCHAR},
+      RISKSENAME = #{risksename,jdbcType=VARCHAR},
+      RISKATTRIBUTE = #{riskattribute,jdbcType=VARCHAR},
+      SALEAREALEVEL = #{salearealevel,jdbcType=VARCHAR},
+      SALEAREACODE = #{saleareacode,jdbcType=VARCHAR},
+      SALEAREANAME = #{saleareaname,jdbcType=VARCHAR},
+      MATERIALCONTXT = #{materialcontxt,jdbcType=VARCHAR},
+      CLASSCODE = #{classcode,jdbcType=VARCHAR},
+      FRAMECODE = #{framecode,jdbcType=VARCHAR},
+      REPORTNO = #{reportno,jdbcType=VARCHAR},
+      PROJECTCODE = #{projectcode,jdbcType=VARCHAR},
+      PLANIND = #{planind,jdbcType=VARCHAR},
+      ACCOUNTLEVEL = #{accountlevel,jdbcType=VARCHAR},
+      REINSLEVEL = #{reinslevel,jdbcType=VARCHAR},
+      MANAGEMENTLEVEL = #{managementlevel,jdbcType=VARCHAR},
+      STATLEVEL = #{statlevel,jdbcType=VARCHAR},
+      AUDITFLAG = #{auditflag,jdbcType=VARCHAR},
+      AGRICULTUREFLAG = #{agricultureflag,jdbcType=VARCHAR},
+      POLICYFLAG = #{policyflag,jdbcType=VARCHAR},
+      POLICYPROCESSFLAG = #{policyprocessflag,jdbcType=VARCHAR},
+      ISFORCE = #{isforce,jdbcType=VARCHAR},
+      REQUIREDFLAG = #{requiredflag,jdbcType=VARCHAR},
+      CREATORCODE = #{creatorcode,jdbcType=VARCHAR},
+      CREATETIME = #{createtime,jdbcType=TIMESTAMP},
+      UPDATERCODE = #{updatercode,jdbcType=VARCHAR},
+      UPDATETIME = #{updatetime,jdbcType=TIMESTAMP},
+      VALIDDATE = #{validdate,jdbcType=TIMESTAMP},
+      INVALIDDATE = #{invaliddate,jdbcType=TIMESTAMP},
+      VALIDIND = #{validind,jdbcType=VARCHAR},
+      TCOL1 = #{tcol1,jdbcType=VARCHAR},
+      TCOL2 = #{tcol2,jdbcType=VARCHAR},
+      TCOL3 = #{tcol3,jdbcType=VARCHAR},
+      REMARK = #{remark,jdbcType=VARCHAR},
+      FLAG = #{flag,jdbcType=VARCHAR},
+      RATEUNIT = #{rateunit,jdbcType=DECIMAL},
+      SHORTRATEFLAG = #{shortrateflag,jdbcType=VARCHAR},
+      CLASSFLAG = #{classflag,jdbcType=VARCHAR},
+      RISKFLAG = #{riskflag,jdbcType=VARCHAR},
+      AUTOPAYMENTFLAG = #{autopaymentflag,jdbcType=VARCHAR},
+      ENDUPDATERCODE = #{endupdatercode,jdbcType=VARCHAR},
+      OPERATETIMEFORHIS = #{operatetimeforhis,jdbcType=TIMESTAMP},
+      POLICYTYPE = #{policytype,jdbcType=VARCHAR},
+      PRODUCTVADLIDDATE = #{productvadliddate,jdbcType=TIMESTAMP},
+      REVISEDATE = #{revisedate,jdbcType=TIMESTAMP},
+      VALIDSTATUS = #{validstatus,jdbcType=VARCHAR},
+      NEWRISKCODE = #{newriskcode,jdbcType=VARCHAR}
+    where RISKCODE = #{riskcode,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select RISKCODE, OLDRISKCODE, RISKCNAME, RISKSCNAME, RISKTNAME, RISKENAME, RISKSENAME, 
+    RISKATTRIBUTE, SALEAREALEVEL, SALEAREACODE, SALEAREANAME, MATERIALCONTXT, CLASSCODE, 
+    FRAMECODE, REPORTNO, PROJECTCODE, PLANIND, ACCOUNTLEVEL, REINSLEVEL, MANAGEMENTLEVEL, 
+    STATLEVEL, AUDITFLAG, AGRICULTUREFLAG, POLICYFLAG, POLICYPROCESSFLAG, ISFORCE, REQUIREDFLAG, 
+    CREATORCODE, CREATETIME, UPDATERCODE, UPDATETIME, VALIDDATE, INVALIDDATE, VALIDIND, 
+    TCOL1, TCOL2, TCOL3, REMARK, FLAG, RATEUNIT, SHORTRATEFLAG, CLASSFLAG, RISKFLAG, 
+    AUTOPAYMENTFLAG, ENDUPDATERCODE, OPERATETIMEFORHIS, POLICYTYPE, PRODUCTVADLIDDATE, 
+    REVISEDATE, VALIDSTATUS, NEWRISKCODE
+    from PRPMRISK
+    where RISKCODE = #{riskcode,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select RISKCODE, OLDRISKCODE, RISKCNAME, RISKSCNAME, RISKTNAME, RISKENAME, RISKSENAME, 
+    RISKATTRIBUTE, SALEAREALEVEL, SALEAREACODE, SALEAREANAME, MATERIALCONTXT, CLASSCODE, 
+    FRAMECODE, REPORTNO, PROJECTCODE, PLANIND, ACCOUNTLEVEL, REINSLEVEL, MANAGEMENTLEVEL, 
+    STATLEVEL, AUDITFLAG, AGRICULTUREFLAG, POLICYFLAG, POLICYPROCESSFLAG, ISFORCE, REQUIREDFLAG, 
+    CREATORCODE, CREATETIME, UPDATERCODE, UPDATETIME, VALIDDATE, INVALIDDATE, VALIDIND, 
+    TCOL1, TCOL2, TCOL3, REMARK, FLAG, RATEUNIT, SHORTRATEFLAG, CLASSFLAG, RISKFLAG, 
+    AUTOPAYMENTFLAG, ENDUPDATERCODE, OPERATETIMEFORHIS, POLICYTYPE, PRODUCTVADLIDDATE, 
+    REVISEDATE, VALIDSTATUS, NEWRISKCODE
+    from PRPMRISK
+  </select>
+</mapper>

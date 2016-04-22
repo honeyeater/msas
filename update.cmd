@@ -1,0 +1,1 @@
+ant -f autodeploy.xml restart

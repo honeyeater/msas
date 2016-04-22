@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!-- 
+	此配置文件修改不用重启服务
+	用法SysConst.getProperty("CLAIM_WEBSERVICE_URL"))即可取得值;
+ -->
+<sysconst>
+		 <CLAIM_CESHI description="测试" modify="1">8503167e60f811e5835a005056945f6b</CLAIM_CESHI>
+		  <!-- 理赔测试 -->
+		  <CLAIM_WEBSERVICE_URL description="理赔核心服务地址" modify="1">http://180.168.131.21:8080/cxfServices/Claim2vs?wsdl</CLAIM_WEBSERVICE_URL>
+		  <!-- 理赔生产 -->
+		  <!-- <CLAIM_WEBSERVICE_URL description="理赔核心服务地址" modify="1">http://180.168.131.16/cxfServices/Claim2vs?wsdl</CLAIM_WEBSERVICE_URL> -->
+		  <!-- 内网 -->
+		  <!-- <CLAIM_WEBSERVICE_URL description="理赔核心服务地址" modify="1">http://172.16.11.3:8080/mock/cxfServices/Claim2vs?wsdl</CLAIM_WEBSERVICE_URL> -->
+		  <!-- <CLAIM_WEBSERVICE_URL description="理赔核心服务地址" modify="1">http://localhost:8090/mock/cxfServices/Claim2vs?wsdl</CLAIM_WEBSERVICE_URL> -->
+		  <CLAIM_SUBMIT_FLAG description="理赔核心开关，1开0关" modify="1">1</CLAIM_SUBMIT_FLAG>
+		  <CLAIM_FINDEVALUATEINFO description="理赔方法定损单信息查询" modify="1">"findEvaluateInfo"</CLAIM_FINDEVALUATEINFO>
+		  
+		  <!-- OSS服务器相关信息配置   开始 -->
+	      <!-- <OSS_ACCESS_KEY_ID  description="OSS服务器上传密钥" modify="1">FIYwxVPj1GJKr0Ru</OSS_ACCESS_KEY_ID>
+		  <OSS_ACCESS_KEY_SECRET  description="OSS服务器上传密码" modify="1">CwcftKjppkUVc46cGVg3kceyUMcrtV</OSS_ACCESS_KEY_SECRET>
+		  <OSS_ENDPOINT description="OSS服务器外网地址" modify="1">oss-cn-beijing.aliyuncs.com</OSS_ENDPOINT>
+		  <OSS_ENDPOINT_INTERNAL description="OSS服务器内网地址" modify="1">oss-cn-beijing.aliyuncs.com</OSS_ENDPOINT_INTERNAL>
+		  <OSS_BUCKETNAME description="OSS服务器bucket名称" modify="1">msplatform</OSS_BUCKETNAME>
+		  <OSS_BUCKETNAME_VIDEO description="中兴OSS服务器bucket名称" modify="1">videoliveneo</OSS_BUCKETNAME_VIDEO>
+		  <OSS_OUT_OF_DATE description="OSS服务器访问url过期时间" modify="1">1800000</OSS_OUT_OF_DATE> --><!-- 默认30min  -->
+
+
+	      <OSS_ACCESS_KEY_ID  description="OSS服务器上传密钥" modify="1">FIYwxVPj1GJKr0Ru</OSS_ACCESS_KEY_ID>
+		  <OSS_ACCESS_KEY_SECRET  description="OSS服务器上传密码" modify="1">CwcftKjppkUVc46cGVg3kceyUMcrtV</OSS_ACCESS_KEY_SECRET>
+		  <OSS_ENDPOINT description="OSS服务器外网地址" modify="1">oss-cn-beijing.aliyuncs.com</OSS_ENDPOINT>
+		  <OSS_ENDPOINT_INTERNAL description="OSS服务器内网地址" modify="1">oss-cn-beijing.aliyuncs.com</OSS_ENDPOINT_INTERNAL>
+		  <OSS_BUCKETNAME description="OSS服务器bucket名称" modify="1">demoplatform</OSS_BUCKETNAME>
+		  <OSS_BUCKETNAME_VIDEO description="中兴OSS服务器bucket名称" modify="1">videoliveneo</OSS_BUCKETNAME_VIDEO>
+		  <OSS_OUT_OF_DATE description="OSS服务器访问url过期时间" modify="1">1800000</OSS_OUT_OF_DATE><!--默认30min  -->
+		  <!-- OSS服务器相关信息配置   结束 -->
+		  
+		  <!-- 内网测试 -->
+		  <!-- 座席LoadConfig调用的WAS零配置地址-->
+		  <!-- <VIDEO_CONFIGURL  description="座席LoadConfig调用的WAS零配置地址" modify="1" >http://119.253.36.103:8081/was</VIDEO_CONFIGURL> -->
+		  <!--获取监控和排队预测数据的webservice地址  -->
+		  <!-- <VIDEO_WEBSERVICE_URL description="获取监控和排队预测数据的webservice地址" modify="1">http://119.253.36.103:8081/uda/webservice/ZteEbaseAccess?wsdl</VIDEO_WEBSERVICE_URL> -->
+		  <!-- 视频预占排队 -->
+		  <!-- <VIDEO_CAMPON_URL description="后台预占排队的webservice地址" modify="1">http://119.253.36.103:7274/NGCC/Service.asmx</VIDEO_CAMPON_URL> -->
+		  
+		  <!-- 阿里生产 -->
+		  <!-- <VIDEO_CONFIGURL  description="座席LoadConfig调用的WAS零配置地址" modify="1" >http://123.57.77.109:8081/was</VIDEO_CONFIGURL>
+		  <VIDEO_WEBSERVICE_URL description="获取监控和排队预测数据的webservice地址" modify="1">http://10.173.41.184:8081/uda/webservice/ZteEbaseAccess?wsdl</VIDEO_WEBSERVICE_URL>
+		  <VIDEO_CAMPON_URL description="后台预占排队的webservice地址" modify="1">http://123.57.77.109:7274/NGCC/Service.asmx</VIDEO_CAMPON_URL> -->
+		  
+		  <!-- 阿里云测试环境 -->
+		  <VIDEO_CONFIGURL  description="座席LoadConfig调用的WAS零配置地址" modify="1" >http://101.200.135.55:8081/was</VIDEO_CONFIGURL>
+		  <VIDEO_WEBSERVICE_URL description="获取监控和排队预测数据的webservice地址" modify="1">http://101.200.135.55:8081/uda/webservice/ZteEbaseAccess?wsdl</VIDEO_WEBSERVICE_URL>
+		  <VIDEO_CAMPON_URL description="后台预占排队的webservice地址" modify="1">http://101.200.135.55:7274/NGCC/Service.asmx</VIDEO_CAMPON_URL>
+		  
+		  <!-- 断点上传端口 -->
+		  <IMG_UPLOAD_PORT description="断点上传端口" modify="1">7878</IMG_UPLOAD_PORT>
+		  
+		  <!-- 安装包保存地址 -->
+		  <APP_PACKAGE_PATH description=" 安装包保存地址" modify="1">msplatform/app/</APP_PACKAGE_PATH>
+</sysconst>
+

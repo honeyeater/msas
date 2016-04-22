@@ -1,0 +1,31 @@
+@charset "utf-8";
+/* CSS Document */
+.head{ width:100%; height:80px; background:url(../../images/login/top_btubg.jpg) repeat-x bottom;}
+.head_top{ padding:20px 0 0 118px; margin:0 auto; overflow:hidden;}
+.head_top a{ display:block; float:left;}
+.head_top span{ display:block; float:left; background:url(../../images/login//shuline.jpg) no-repeat; height:28px; width:1px; margin:10px 10px 0 0;}
+.head_top font{ display:block; float:left; height:43px; line-height:43px; color:#f01b57; font-size:18px;}
+.Content{ width:100%; background:url(../../images/login/content_bg.jpg) repeat; overflow:hidden;}
+.login_content{ width:1190px; margin:0 auto;}
+.login_content .Left{ padding:130px 70px 0 80px; float:left;}
+.login_content .Right{ float:left; width:270px; border:1px solid #d7d7d7; margin-top:75px; border-top:5px solid #e40047; padding:0 58px 0 50px; background-color:#fff;}
+.Right h3{ margin:34px 0 20px 0; font-size:22px;}
+.Right ul{ overflow:hidden;}
+.Right ul li{ margin-bottom:20px; width:268px; height:35px; line-height:35x; border:1px solid #cbcbcb;}
+.Right li span{ display:block; float:left; width:40px; background:url(../../images/login/icon.png) no-repeat; height:22px; border-right:1px solid #cbcbcb; margin-top:8px;}
+.Right li span.bg1{background-position:8px 0px;}
+.Right li span.bg2{background-position:12px -40px;}
+.Right li span.bg3{background-position:17px -80px;}
+.Right li input{ float:left; border:none; padding-left:7px; height:20px; line-height:20px; font-size:14px; width:220px; height:35px; line-height:35px;}
+.Right li span.code{ display:block; float:left; border-left:1px solid #cbcbcb; height:35px; background:none; margin:0;}
+.Right li.li_code input{ width:130px;}
+.Right .login_btu{ margin-bottom:44px; border:none; padding:0; height:38px;}
+.Right .login_btu input{ border:none; background:url(../../images/login/icon.png) no-repeat; background-position:0 -120px; width:270px; height:38px; line-height:38px; text-align:center; color:#fff; font-size:16px; font-weight:bold; padding:0; cursor:pointer;}
+.checkEvet{ font-size:14px; color:#f60; line-height:20px; height:20px; text-align:right;}
+.Right li.error{ border:1px solid #f60; margin:0;}
+.footer{ width:100%; height:45px;  background-color:#d8d8d8;}
+.footer .foot_tab{ text-align:center; padding-top:18px;}
+.foot_tab a{ display:inline-block; height:15px; line-height:15px; border-right:2px solid #959595; padding:0 6px; font-size:14px;}
+.foot_tab a.right_no{ border:none;}
+.Right .placeholder{position:relative;}
+.Right .placeholder font.font_ts{position:absolute;top:0;left:38px;padding:0 10px;height:35px;color:#a6a6a6;font-size:14px;line-height:35px;width:210px;}

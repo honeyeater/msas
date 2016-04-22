@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sinosoft.msas.dao.PrpMuserMapper" >
+  <resultMap id="BaseResultMap" type="com.sinosoft.msas.domain.PrpMuser" >
+    <id column="USERCODE" property="usercode" jdbcType="VARCHAR" />
+    <result column="USERNAME" property="username" jdbcType="VARCHAR" />
+    <result column="USERENAME" property="userename" jdbcType="VARCHAR" />
+    <result column="PASSWORD" property="password" jdbcType="VARCHAR" />
+    <result column="SEAL" property="seal" jdbcType="VARCHAR" />
+    <result column="PASSWORDSETDATE" property="passwordsetdate" jdbcType="TIMESTAMP" />
+    <result column="PASSWORDEXPIREDATE" property="passwordexpiredate" jdbcType="TIMESTAMP" />
+    <result column="COMCODE" property="comcode" jdbcType="VARCHAR" />
+    <result column="MAKECOM" property="makecom" jdbcType="VARCHAR" />
+    <result column="ACCOUNTCODE" property="accountcode" jdbcType="VARCHAR" />
+    <result column="PHONE" property="phone" jdbcType="VARCHAR" />
+    <result column="MOBILE" property="mobile" jdbcType="VARCHAR" />
+    <result column="ADDRESS" property="address" jdbcType="VARCHAR" />
+    <result column="POSTCODE" property="postcode" jdbcType="VARCHAR" />
+    <result column="EMAIL" property="email" jdbcType="VARCHAR" />
+    <result column="USERFLAG" property="userflag" jdbcType="VARCHAR" />
+    <result column="LOGINSYSTEM" property="loginsystem" jdbcType="VARCHAR" />
+    <result column="NEWUSERCODE" property="newusercode" jdbcType="VARCHAR" />
+    <result column="VALIDSTATUS" property="validstatus" jdbcType="VARCHAR" />
+    <result column="ARTICLECODE" property="articlecode" jdbcType="VARCHAR" />
+    <result column="FLAG" property="flag" jdbcType="VARCHAR" />
+    <result column="POSTERMINALNO" property="posterminalno" jdbcType="VARCHAR" />
+    <result column="USERTYPE" property="usertype" jdbcType="VARCHAR" />
+    <result column="PROFESSIONALNUM" property="professionalnum" jdbcType="VARCHAR" />
+    <result column="ISCHECK" property="ischeck" jdbcType="VARCHAR" />
+    <result column="IMEI" property="imei" jdbcType="VARCHAR" />
+    <result column="SIM" property="sim" jdbcType="VARCHAR" />
+    <result column="REMARK" property="remark" jdbcType="VARCHAR" />
+    <result column="HASPHONEFLAG" property="hasphoneflag" jdbcType="VARCHAR" />
+    <result column="REGISTPHONENO" property="registphoneno" jdbcType="VARCHAR" />
+    <result column="REGISTUSERNAME" property="registusername" jdbcType="VARCHAR" />
+    <result column="REGISTTIME" property="registtime" jdbcType="TIMESTAMP" />
+    <result column="REGISTPASSWORD" property="registpassword" jdbcType="VARCHAR" />
+    <result column="ERRORTIMES" property="errortimes" jdbcType="DECIMAL" />
+    <result column="LASTLOGINTIME" property="lastlogintime" jdbcType="TIMESTAMP" />
+    <result column="LOCKTIME" property="locktime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from PRPMUSER
+    where USERCODE = #{usercode,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.sinosoft.msas.domain.PrpMuser" >
+    insert into PRPMUSER (USERCODE, USERNAME, USERENAME, 
+      PASSWORD, SEAL, PASSWORDSETDATE, 
+      PASSWORDEXPIREDATE, COMCODE, MAKECOM, 
+      ACCOUNTCODE, PHONE, MOBILE, 
+      ADDRESS, POSTCODE, EMAIL, 
+      USERFLAG, LOGINSYSTEM, NEWUSERCODE, 
+      VALIDSTATUS, ARTICLECODE, FLAG, 
+      POSTERMINALNO, USERTYPE, PROFESSIONALNUM, 
+      ISCHECK, IMEI, SIM, 
+      REMARK, HASPHONEFLAG, REGISTPHONENO, 
+      REGISTUSERNAME, REGISTTIME, REGISTPASSWORD, 
+      ERRORTIMES, LASTLOGINTIME, LOCKTIME
+      )
+    values (#{usercode,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR}, #{userename,jdbcType=VARCHAR}, 
+      #{password,jdbcType=VARCHAR}, #{seal,jdbcType=VARCHAR}, #{passwordsetdate,jdbcType=TIMESTAMP}, 
+      #{passwordexpiredate,jdbcType=TIMESTAMP}, #{comcode,jdbcType=VARCHAR}, #{makecom,jdbcType=VARCHAR}, 
+      #{accountcode,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{mobile,jdbcType=VARCHAR}, 
+      #{address,jdbcType=VARCHAR}, #{postcode,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
+      #{userflag,jdbcType=VARCHAR}, #{loginsystem,jdbcType=VARCHAR}, #{newusercode,jdbcType=VARCHAR}, 
+      #{validstatus,jdbcType=VARCHAR}, #{articlecode,jdbcType=VARCHAR}, #{flag,jdbcType=VARCHAR}, 
+      #{posterminalno,jdbcType=VARCHAR}, #{usertype,jdbcType=VARCHAR}, #{professionalnum,jdbcType=VARCHAR}, 
+      #{ischeck,jdbcType=VARCHAR}, #{imei,jdbcType=VARCHAR}, #{sim,jdbcType=VARCHAR}, 
+      #{remark,jdbcType=VARCHAR}, #{hasphoneflag,jdbcType=VARCHAR}, #{registphoneno,jdbcType=VARCHAR}, 
+      #{registusername,jdbcType=VARCHAR}, #{registtime,jdbcType=TIMESTAMP}, #{registpassword,jdbcType=VARCHAR}, 
+      #{errortimes,jdbcType=DECIMAL}, #{lastlogintime,jdbcType=TIMESTAMP}, #{locktime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.sinosoft.msas.domain.PrpMuser" >
+    update PRPMUSER
+    set USERNAME = #{username,jdbcType=VARCHAR},
+      USERENAME = #{userename,jdbcType=VARCHAR},
+      PASSWORD = #{password,jdbcType=VARCHAR},
+      SEAL = #{seal,jdbcType=VARCHAR},
+      PASSWORDSETDATE = #{passwordsetdate,jdbcType=TIMESTAMP},
+      PASSWORDEXPIREDATE = #{passwordexpiredate,jdbcType=TIMESTAMP},
+      COMCODE = #{comcode,jdbcType=VARCHAR},
+      MAKECOM = #{makecom,jdbcType=VARCHAR},
+      ACCOUNTCODE = #{accountcode,jdbcType=VARCHAR},
+      PHONE = #{phone,jdbcType=VARCHAR},
+      MOBILE = #{mobile,jdbcType=VARCHAR},
+      ADDRESS = #{address,jdbcType=VARCHAR},
+      POSTCODE = #{postcode,jdbcType=VARCHAR},
+      EMAIL = #{email,jdbcType=VARCHAR},
+      USERFLAG = #{userflag,jdbcType=VARCHAR},
+      LOGINSYSTEM = #{loginsystem,jdbcType=VARCHAR},
+      NEWUSERCODE = #{newusercode,jdbcType=VARCHAR},
+      VALIDSTATUS = #{validstatus,jdbcType=VARCHAR},
+      ARTICLECODE = #{articlecode,jdbcType=VARCHAR},
+      FLAG = #{flag,jdbcType=VARCHAR},
+      POSTERMINALNO = #{posterminalno,jdbcType=VARCHAR},
+      USERTYPE = #{usertype,jdbcType=VARCHAR},
+      PROFESSIONALNUM = #{professionalnum,jdbcType=VARCHAR},
+      ISCHECK = #{ischeck,jdbcType=VARCHAR},
+      IMEI = #{imei,jdbcType=VARCHAR},
+      SIM = #{sim,jdbcType=VARCHAR},
+      REMARK = #{remark,jdbcType=VARCHAR},
+      HASPHONEFLAG = #{hasphoneflag,jdbcType=VARCHAR},
+      REGISTPHONENO = #{registphoneno,jdbcType=VARCHAR},
+      REGISTUSERNAME = #{registusername,jdbcType=VARCHAR},
+      REGISTTIME = #{registtime,jdbcType=TIMESTAMP},
+      REGISTPASSWORD = #{registpassword,jdbcType=VARCHAR},
+      ERRORTIMES = #{errortimes,jdbcType=DECIMAL},
+      LASTLOGINTIME = #{lastlogintime,jdbcType=TIMESTAMP},
+      LOCKTIME = #{locktime,jdbcType=TIMESTAMP}
+    where USERCODE = #{usercode,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select USERCODE, USERNAME, USERENAME, PASSWORD, SEAL, PASSWORDSETDATE, PASSWORDEXPIREDATE, 
+    COMCODE, MAKECOM, ACCOUNTCODE, PHONE, MOBILE, ADDRESS, POSTCODE, EMAIL, USERFLAG, 
+    LOGINSYSTEM, NEWUSERCODE, VALIDSTATUS, ARTICLECODE, FLAG, POSTERMINALNO, USERTYPE, 
+    PROFESSIONALNUM, ISCHECK, IMEI, SIM, REMARK, HASPHONEFLAG, REGISTPHONENO, REGISTUSERNAME, 
+    REGISTTIME, REGISTPASSWORD, ERRORTIMES, LASTLOGINTIME, LOCKTIME
+    from PRPMUSER
+    where USERCODE = #{usercode,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select USERCODE, USERNAME, USERENAME, PASSWORD, SEAL, PASSWORDSETDATE, PASSWORDEXPIREDATE, 
+    COMCODE, MAKECOM, ACCOUNTCODE, PHONE, MOBILE, ADDRESS, POSTCODE, EMAIL, USERFLAG, 
+    LOGINSYSTEM, NEWUSERCODE, VALIDSTATUS, ARTICLECODE, FLAG, POSTERMINALNO, USERTYPE, 
+    PROFESSIONALNUM, ISCHECK, IMEI, SIM, REMARK, HASPHONEFLAG, REGISTPHONENO, REGISTUSERNAME, 
+    REGISTTIME, REGISTPASSWORD, ERRORTIMES, LASTLOGINTIME, LOCKTIME
+    from PRPMUSER
+  </select>
+</mapper>

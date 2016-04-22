@@ -1,0 +1,25 @@
+﻿@charset "utf-8";
+/*----------------------------- 
+Name: Index Css
+Design:West
+Time: 2014-03
+-----------------------------*/
+/* reset */
+body,div,ul,ol,li,dl,dt,dd,form,input,textarea,p,th,td,h1,h2,h3,h4{ margin:0; padding:0;}
+img{ border:0;}
+body,th,td,input,select,textarea,h1,h2,h3,h4,font{ font:12px "microsoft yahei",Tahoma, Geneva, sans-serif; font-weight:normal;}
+html,body{ height:100%;}
+body{ background:#fff; color:#333; }
+ul,ol{ list-style-type:none;}
+input,select,textarea{ vertical-align:middle; outline:none; resize:none;}
+input::-ms-clear{ display:none;}
+a{ text-decoration:none; color:#333;}
+a:hover{ text-decoration:none; color:#f60;}
+
+/* initial */
+.clearfix:after { display:block; content:""; clear:both;}
+.clearfix{ *zoom:1;}
+body.ovxhide{ overflow-x:hidden;}
+.fl{ float:left;}
+.fr{ float:right;}
+.none{ display:none;}

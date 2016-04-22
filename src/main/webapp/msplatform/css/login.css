@@ -1,0 +1,137 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+body{
+	background: url(../images/b_g_new2.png) no-repeat;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+#container{
+	width:483px;
+	height:330px;
+	position: relative;
+	margin:233px auto auto 571px;
+	
+}
+#inf {
+	width: 483px;
+	height: 220px;
+	overflow: hidden;
+	position: relative;
+	left: 0px;
+	top: 0px;
+	margin-left: 80px;
+}
+
+#container #inf ul{
+	list-style-type:none;
+}
+#container #inf ul li{
+	height: 43px;
+	overflow: hidden;
+	font-family:"微软雅黑";
+	font-size:14px;
+	padding-left: 36px;
+	color:#777777;
+	border-color:;
+	border-bottom:solid;
+	border-bottom-color:#cecece;
+	border-bottom-width:1px;
+}
+#inf li input, #inf li span, #inf li div{
+	float: left;
+}
+
+#inf li span{
+	margin-top: 16px;
+}
+
+#container #inf ul li.user{
+	width: 247px;
+	background: url(../images/user_03.png) 5px 14px no-repeat;
+}
+
+#container #inf ul li .text{
+	color: #555555;
+	border:none;
+    background-color:transparent;
+    height: 20px;
+    margin: 4px auto auto 5px;
+    line-height: 15px;
+}
+
+.bord {
+	height: 24px;
+	float: left;
+	margin-left: 6px;
+	margin-top: 14px;
+}
+
+
+#container #inf ul li.password{
+	width: 247px;
+	background:url(../images/password_06.png) 5px 14px no-repeat;
+}
+
+.li_varifyCode {
+	width: 247px;
+	background:url(../images/code.png) 5px 14px no-repeat;
+}
+
+#code{
+	float: left;
+	margin-left: 4px;
+	margin-top: 8px;
+}
+
+#container #inf #middle{
+	width:360px;
+	height:33px;
+	position:absolute;
+	top:140px;
+	left: 0px;
+}
+
+
+#container #inf #middle .bt{
+	width:98px;
+	height:33px;
+	background:url(../images/login_new.png) no-repeat;	
+	float:left;
+	border:none;
+	cursor: pointer;
+}
+#container #inf #middle .bt1{
+	margin-left: 70px;
+	width:98px;
+	height:33px;
+	background:url(../images/reset_new.png) no-repeat;	
+	float:left;
+	border:none;
+	cursor: pointer;
+}
+
+#container #bottom a, #container #bottom p {
+	text-decoration: none;
+	color: white;
+	font-size: 14px;
+}
+
+#container #bottom p{
+	margin-top: 6px;
+}
+
+#container #bottom {
+	font-size: 13px;
+	width:287px;
+	/*width:247px;*/
+	top:0px;
+	left:50px;
+	position:relative;
+}

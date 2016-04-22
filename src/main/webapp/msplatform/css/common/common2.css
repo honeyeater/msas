@@ -1,0 +1,101 @@
+table {
+	font-size: 13px;
+}
+
+.STYLE2 {
+	font-size: 16px
+}
+
+/* body锟斤拷锟斤拷色锟斤拷锟斤拷锟侥柯硷拷峁癸拷锟酵计拷锟斤拷锟轿伙拷锟�*/
+body {
+	text-align: center;
+/* 	background: url("../../images/common/bg1.jpg"); */
+}
+
+/* 锟�锟斤拷锟斤拷锟斤拷式*/
+.table {
+	width: 712;
+	border: 0;
+	jerry: expression(cellSpacing ="0");
+	padd: expression(this.cellPadding ="0");
+	
+	top: 10px;
+	position: relative;
+	text-align: center;
+}
+
+/* 锟�锟斤拷锟斤拷锟斤拷式*/
+.td1 {
+	/* background-color: #aabfde; */
+	height: 55px;
+	text-align:left; 
+	
+}
+.td1 td{ padding-left:8%;}
+/* 锟�1锟斤拷式*/
+.table1 {
+	width: 712;
+	jerry: expression(cellSpacing ="1");
+	padd: expression(this.cellPadding ="0");
+	
+}
+
+/* 锟�1锟斤拷录锟斤拷锟津背撅拷色*/
+.tr_color {
+	
+}
+
+/* 锟�name锟斤拷式*/
+.td_name {
+	height: 25;
+	text-align: right;
+	font-size:14px;
+}
+
+/* 锟�input锟斤拷式*/
+.td_input {
+	height: 25;
+	text-align: left;
+}
+
+/* 图片锟斤拷钮锟斤拷式*/
+.img_button {
+	width: 60px;
+	height: 28px;
+	cursor: pointer;	
+	margin-top:10px;	
+}
+
+
+/* 锟�锟斤拷锟斤拷锟斤拷式*/
+.table_add {
+	width: 600;
+	border: 0;
+	jerry: expression(cellSpacing ="0");
+	padd: expression(this.cellPadding ="0");
+	background-color: #e4e9ef;
+	top: 10px;
+	position: relative;
+	text-align: center;
+}
+
+/* 锟�1锟斤拷式*/
+.table1_add {
+	width: 600;
+	jerry: expression(cellSpacing ="1");
+	padd: expression(this.cellPadding ="0");
+	background-color: #C8C8C8;
+}
+
+body,th,td,input,select,textarea,h1,h2,h3,h4,font{ font:12px "microsoft yahei",Tahoma, Geneva, sans-serif; font-weight:normal;}
+.table1 td input.TextLength{ width:218px; height:28px; line-height:28px; padding-left:5px; border:1px solid #ccc;}
+.table1 td select.TextLength{ width:218px; height:28px; line-height:28px; padding-left:5px; border:1px solid #ccc;}
+.table1 td textarea.TextLength{ width:228px; height:128px;  padding-left:5px; border:1px solid #ccc;}
+.table1 td.td_name{ height:40px;}
+.table1 td select{width:99px; height:28px; line-height:28px; margin-right:10px;}
+.tab_cen{ margin:0 auto;}
+.td1 span{ font-size:14px;}
+.td_input .TextLaddr{ width:218px; height:58px; border:1px solid #ccc;}
+.tr_pad20 td{ padding-left:138px;}
+input.canotHandle{ width:60px; hright:28px;font-size:14px; line-height:28px; text-align:center;margin-right:5px; border:1px solid #ddd; background-color:#fff; color:#666;}
+input.canHandle{width:60px; hright:28px; line-height:28px; text-align:center; color:#fff; font-size:14px; border-radius:3px; background-color:#0079ff; border:none; margin-right:5px; cursor:pointer;}

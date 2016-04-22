@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<project default="prpallbuild" basedir="." name="prpallbuild">
+<record name="log.txt" action="start"/>
+<!--属性定义-->
+<property name="msplatformdir" value="D:/work/天安移动查勘/trunk/msplatform"/>
+    <path id="msplatform.classpath">
+        <fileset dir="${msplatformdir}/webapp/WEB-INF/lib">
+            <include name="**/*.jar"/>
+        </fileset>
+    </path>
+
+<!--各系统编译打包-->
+<target name="prpallbuild">
+	<echo message="build prpall"/>
+	    <mkdir dir="${msplatformdir}/webapp/WEB-INF/classes"/>  
+        <javac debug="true" debuglevel="source,lines,vars" destdir="${msplatformdir}/webapp/WEB-INF/classes"  includeantruntime="on" encoding="UTF-8">
+            <src path="${msplatformdir}/src"/>
+            <exclude name="**/.svn/**;.svn"/>
+            <classpath refid="msplatform.classpath"/>
+      </javac> 
+</target>
+<target name="jar" depends="prpallbuild">
+	
+	<replace file="list.txt"  >
+<replacefilter token=".java" value=".class"/>
+<replacefilter token="src/java/" value="webapp/WEB-INF/classes/" />
+<replacefilter token="src/resources/" value="webapp/WEB-INF/classes/" />
+<replacefilter token="/Mobile Survey/trunk/msplatform/msplatform/" value="/Mobile Survey/trunk/msplatform/webapp/"  />
+<replacefilter token="/Mobile Survey/trunk/msplatform/" value=""  />
+</replace>	
+
+ <copy includeemptydirs="false" todir="./webapp/WEB-INF/classes/com">
+            <fileset dir="./src/java/com" excludes="**/*.java, **/*.java,**/*.properties"/>
+    </copy>
+    
+    
+ <copy includeemptydirs="false" todir="./webapp/WEB-INF/classes">
+            <fileset dir="./src/resources"/>
+    </copy>
+    
+<exec dir="." executable="cmd"  >
+	<arg value="/c"/>
+  <arg value="jar -cvf update.zip @list.txt"  />
+</exec>
+</target>
+
+<target name="unzip" depends="jar">
+  <delete includeEmptyDirs="true">
+    <fileset dir="update"/>
+  </delete>
+	<mkdir dir="update" />
+	<unzip src="update.zip" dest="update/"/>
+	<delete dir="." includes="*.zip" quiet="true"/>
+</target>
+<target name="ftptoserver" depends="unzip">
+  <scp todir="root:ta8888@192.168.133.27:/usr/local/tomcat7/webapps/msplatform" trust="true">
+    <fileset dir="update/webapp"/>
+  </scp>
+	</target>
+	
+<target name="restart" depends="ftptoserver">
+<sshexec host="192.168.133.27"
+	username="root"
+	password="ta8888"
+	command="cd /root;sh restart.sh"
+	trust="true"/>
+	</target>
+</project>

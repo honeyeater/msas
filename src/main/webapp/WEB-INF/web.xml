@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+	<!-- 配置spring监听器 -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	<!-- 配置spring配置文件加载的位置，包括spring、mybatis、shiro -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+			classpath*:spring/*.xml
+		</param-value>
+	</context-param>
+	<!-- 编码过滤器 -->
+	<filter>
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<async-supported>true</async-supported>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>utf-8</param-value>
+		</init-param>
+	</filter>
+
+	<!-- apache安全框架Shiro配置 这个要配置在所有filter之前 -->
+	<filter>
+		<filter-name>shiroFilter</filter-name>
+		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+		<init-param>  
+            <param-name>targetFilterLifecycle</param-name>  
+            <param-value>true</param-value>  
+        </init-param>  
+	</filter>
+	<filter-mapping>
+		<filter-name>shiroFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+
+	<!-- spring mvc servlet配置 -->
+	<servlet>  
+        <servlet-name>SpringMVC</servlet-name>  
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>  
+        <init-param>  
+            <param-name>contextConfigLocation</param-name>  
+            <param-value>classpath:spring/spring-mvc.xml</param-value>  
+        </init-param>  
+        <load-on-startup>1</load-on-startup>  
+        <async-supported>true</async-supported>  
+    </servlet>  
+    <servlet-mapping>  
+        <servlet-name>SpringMVC</servlet-name>  
+        <!-- 此处可以可以配置成*.do，对应struts的后缀习惯 -->  
+        <url-pattern>/</url-pattern>  
+    </servlet-mapping>
+
+	<!-- 日志 -->
+	<listener>
+		<listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
+	</listener>
+	<context-param>
+		<param-name>log4jConfigLocation</param-name>
+		<param-value>/WEB-INF/classes/config/log4j.properties</param-value>
+	</context-param>
+	<context-param>
+		<param-name>log4jRefreshInterval</param-name>
+		<param-value>6000</param-value>
+	</context-param>
+
+	<!-- 服务器缓存类型 -->
+	<context-param>
+		<param-name>cacheType</param-name>
+		<param-value>ehcache</param-value>
+	</context-param>
+
+	<!-- Cache Filter 缓存过滤器 -->
+	<filter>
+		<filter-name>CacheFilter</filter-name>
+		<filter-class>ins.framework.web.CacheFilter</filter-class>
+		<init-param>
+			<param-name>expireTime</param-name>
+			<param-value>30000</param-value>
+		</init-param>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>CacheFilter</filter-name>
+		<url-pattern>*.js</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>CacheFilter</filter-name>
+		<url-pattern>*.css</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>CacheFilter</filter-name>
+		<url-pattern>*.gif</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>CacheFilter</filter-name>
+		<url-pattern>*.jpg</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>CacheFilter</filter-name>
+		<url-pattern>*.vbs</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>CacheFilter</filter-name>
+		<url-pattern>*.html</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<!-- 页面元素的GZIP压缩 Filter 
+	<filter>
+		<filter-name>compressFilter</filter-name>
+		<filter-class>ins.framework.web.CompressFilter</filter-class>
+		<init-param>
+			<param-name>ignoreKey</param-name>
+			<param-value>.js,.css,.gif,.jpg,.vbs</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>compressFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	-->
+
+	<!-- Spring刷新Introspector防止内存泄露 -->
+	<listener>
+		<listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
+	</listener>
+
+	<!-- cacheManager 服务端缓存 -->
+	<listener>
+		<listener-class>ins.framework.cache.CacheManagerInitListener</listener-class>
+	</listener>
+
+	<!-- requestCombo 合并组件 
+	<servlet>
+		<servlet-name>RequestComboServlet</servlet-name>
+		<servlet-class>ins.platform.requestcombo.RequestComboServlet</servlet-class>
+		<init-param>
+			<description>允许访问的URL前缀，避免源码泄漏风险</description>
+			<param-name>validPrefix</param-name>
+			<param-value>/widgets/</param-value>
+		</init-param>
+		<init-param>
+			<description>是否开启服务端对js文件混淆压缩</description>
+			<param-name>isCompress</param-name>
+			<param-value>false</param-value>
+		</init-param>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>RequestComboServlet</servlet-name>
+		<url-pattern>/requestCombo</url-pattern>
+	</servlet-mapping>
+	<filter-mapping>
+		<filter-name>CacheFilter</filter-name>
+		<url-pattern>/requestCombo</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>compressFilter</filter-name>
+		<url-pattern>/requestCombo</url-pattern>
+	</filter-mapping>
+	-->
+
+	<!-- session超时定义,单位为分钟 -->
+	<session-config>
+		<session-timeout>240</session-timeout>
+	</session-config>
+	<!-- 默认首页定义 -->
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+	<!-- Error Page定义 
+	<error-page>
+		<error-code>500</error-code>
+		<location>/msplatform/pages/common/error.jsp</location>
+	</error-page>
+	<error-page>
+		<error-code>404</error-code>
+		<location>/msplatform/pages/common/404.jsp</location>
+	</error-page>
+	<error-page>
+		<error-code>403</error-code>
+		<location>/msplatform/pages/common/403.jsp</location>
+	</error-page>
+	<error-page>
+		<exception-type>ins.framework.exception.DataVerifyException</exception-type>
+		<location>/msplatform/pages/common/error.jsp</location>
+	</error-page>
+	-->
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>Proprietary</web-resource-name>
+			<url-pattern>/*</url-pattern>
+			<http-method>PUT</http-method>
+			<http-method>DELETE</http-method>
+			<http-method>HEAD</http-method>
+			<http-method>OPTIONS</http-method>
+			<http-method>TRACE</http-method>
+		</web-resource-collection>
+		<auth-constraint>
+		</auth-constraint>
+	</security-constraint>
+
+	<!-- alibaba数据库连接池 Druid监控servlet配置 -->
+	<servlet>
+		<servlet-name>DruidStatView</servlet-name>
+		<servlet-class>com.alibaba.druid.support.http.StatViewServlet</servlet-class>
+		<init-param>
+			<param-name>allow</param-name>
+			<param-value>127.0.0.1</param-value>
+		</init-param>
+		<init-param>
+			<param-name>deny</param-name>
+			<param-value>128.242.127.4</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DruidStatView</servlet-name>
+		<url-pattern>/druid/*</url-pattern>
+	</servlet-mapping>
+
+	<!-- 配置初始化加载文件的servlet -->
+	<servlet>
+		<servlet-name>MPlatSysInit</servlet-name>
+		<servlet-class>com.sinosoft.msas.servlet.MPlatSysInit</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+
+	<!-- 注册axis2的servlet -->
+	<servlet>
+		<servlet-name>AxisServlet</servlet-name>
+		<servlet-class>org.apache.axis2.transport.http.AxisServlet</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>AxisServlet</servlet-name>
+		<url-pattern>/services/*</url-pattern>
+	</servlet-mapping>
+
+</web-app>

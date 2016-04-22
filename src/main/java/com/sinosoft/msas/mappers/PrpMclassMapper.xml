@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sinosoft.msas.dao.PrpMclassMapper" >
+  <resultMap id="BaseResultMap" type="com.sinosoft.msas.domain.PrpMclass" >
+    <id column="CLASSCODE" property="classcode" jdbcType="VARCHAR" />
+    <result column="OLDCLASSCODE" property="oldclasscode" jdbcType="VARCHAR" />
+    <result column="CLASSCNAME" property="classcname" jdbcType="VARCHAR" />
+    <result column="CLASSSCNAME" property="classscname" jdbcType="VARCHAR" />
+    <result column="CLASSTNAME" property="classtname" jdbcType="VARCHAR" />
+    <result column="CLASSENAME" property="classename" jdbcType="VARCHAR" />
+    <result column="CLASSSENAME" property="classsename" jdbcType="VARCHAR" />
+    <result column="CREATORCODE" property="creatorcode" jdbcType="VARCHAR" />
+    <result column="CREATETIME" property="createtime" jdbcType="TIMESTAMP" />
+    <result column="UPDATERCODE" property="updatercode" jdbcType="VARCHAR" />
+    <result column="UPDATETIME" property="updatetime" jdbcType="TIMESTAMP" />
+    <result column="VALIDDATE" property="validdate" jdbcType="TIMESTAMP" />
+    <result column="INVALIDDATE" property="invaliddate" jdbcType="TIMESTAMP" />
+    <result column="AUDITFLAG" property="auditflag" jdbcType="VARCHAR" />
+    <result column="VALIDIND" property="validind" jdbcType="VARCHAR" />
+    <result column="TCOL1" property="tcol1" jdbcType="VARCHAR" />
+    <result column="TCOL2" property="tcol2" jdbcType="VARCHAR" />
+    <result column="TCOL3" property="tcol3" jdbcType="VARCHAR" />
+    <result column="REMARK" property="remark" jdbcType="VARCHAR" />
+    <result column="FLAG" property="flag" jdbcType="VARCHAR" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from PRPMCLASS
+    where CLASSCODE = #{classcode,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.sinosoft.msas.domain.PrpMclass" >
+    insert into PRPMCLASS (CLASSCODE, OLDCLASSCODE, CLASSCNAME, 
+      CLASSSCNAME, CLASSTNAME, CLASSENAME, 
+      CLASSSENAME, CREATORCODE, CREATETIME, 
+      UPDATERCODE, UPDATETIME, VALIDDATE, 
+      INVALIDDATE, AUDITFLAG, VALIDIND, 
+      TCOL1, TCOL2, TCOL3, 
+      REMARK, FLAG)
+    values (#{classcode,jdbcType=VARCHAR}, #{oldclasscode,jdbcType=VARCHAR}, #{classcname,jdbcType=VARCHAR}, 
+      #{classscname,jdbcType=VARCHAR}, #{classtname,jdbcType=VARCHAR}, #{classename,jdbcType=VARCHAR}, 
+      #{classsename,jdbcType=VARCHAR}, #{creatorcode,jdbcType=VARCHAR}, #{createtime,jdbcType=TIMESTAMP}, 
+      #{updatercode,jdbcType=VARCHAR}, #{updatetime,jdbcType=TIMESTAMP}, #{validdate,jdbcType=TIMESTAMP}, 
+      #{invaliddate,jdbcType=TIMESTAMP}, #{auditflag,jdbcType=VARCHAR}, #{validind,jdbcType=VARCHAR}, 
+      #{tcol1,jdbcType=VARCHAR}, #{tcol2,jdbcType=VARCHAR}, #{tcol3,jdbcType=VARCHAR}, 
+      #{remark,jdbcType=VARCHAR}, #{flag,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.sinosoft.msas.domain.PrpMclass" >
+    update PRPMCLASS
+    set OLDCLASSCODE = #{oldclasscode,jdbcType=VARCHAR},
+      CLASSCNAME = #{classcname,jdbcType=VARCHAR},
+      CLASSSCNAME = #{classscname,jdbcType=VARCHAR},
+      CLASSTNAME = #{classtname,jdbcType=VARCHAR},
+      CLASSENAME = #{classename,jdbcType=VARCHAR},
+      CLASSSENAME = #{classsename,jdbcType=VARCHAR},
+      CREATORCODE = #{creatorcode,jdbcType=VARCHAR},
+      CREATETIME = #{createtime,jdbcType=TIMESTAMP},
+      UPDATERCODE = #{updatercode,jdbcType=VARCHAR},
+      UPDATETIME = #{updatetime,jdbcType=TIMESTAMP},
+      VALIDDATE = #{validdate,jdbcType=TIMESTAMP},
+      INVALIDDATE = #{invaliddate,jdbcType=TIMESTAMP},
+      AUDITFLAG = #{auditflag,jdbcType=VARCHAR},
+      VALIDIND = #{validind,jdbcType=VARCHAR},
+      TCOL1 = #{tcol1,jdbcType=VARCHAR},
+      TCOL2 = #{tcol2,jdbcType=VARCHAR},
+      TCOL3 = #{tcol3,jdbcType=VARCHAR},
+      REMARK = #{remark,jdbcType=VARCHAR},
+      FLAG = #{flag,jdbcType=VARCHAR}
+    where CLASSCODE = #{classcode,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select CLASSCODE, OLDCLASSCODE, CLASSCNAME, CLASSSCNAME, CLASSTNAME, CLASSENAME, 
+    CLASSSENAME, CREATORCODE, CREATETIME, UPDATERCODE, UPDATETIME, VALIDDATE, INVALIDDATE, 
+    AUDITFLAG, VALIDIND, TCOL1, TCOL2, TCOL3, REMARK, FLAG
+    from PRPMCLASS
+    where CLASSCODE = #{classcode,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select CLASSCODE, OLDCLASSCODE, CLASSCNAME, CLASSSCNAME, CLASSTNAME, CLASSENAME, 
+    CLASSSENAME, CREATORCODE, CREATETIME, UPDATERCODE, UPDATETIME, VALIDDATE, INVALIDDATE, 
+    AUDITFLAG, VALIDIND, TCOL1, TCOL2, TCOL3, REMARK, FLAG
+    from PRPMCLASS
+  </select>
+</mapper>

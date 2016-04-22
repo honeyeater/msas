@@ -1,0 +1,125 @@
+body,table,html {
+	margin: 0px;
+	padding: 0px;
+}
+
+#div_title2 {
+	cursor: default;
+	background-color: #F2F2F2;
+	height: 15px;
+	line-height: 15px;
+	padding-left: 10px;
+	font-size: 12px;
+	color: #3C3C3C;
+}
+
+#out_div {
+	cursor: default;
+	margin: 0px;
+	padding: 0px;
+}
+
+#div_title {
+	border-bottom: 1px solid #C4C4C4;
+	font-size: 12px;
+	height: 15px;
+	width: 275px;
+	over-flow: hidden;
+}
+
+#div_title span {
+	display: inline-block;
+	padding-top: 5px;
+	text-align: center;
+}
+
+#title1 {
+	width: 35px;
+	margin-left: 5px;
+}
+
+#title2 {
+	width: 140px;
+}
+
+#title3 {
+	width: 50px;
+}
+
+#title4 {
+	width: 30px;
+}
+
+#is_exist {
+	margin-top: 10px;
+	margin-left: 5px;
+	display: none;
+	font: oblique small-caps bold 12px Arial;
+	color: #777777;
+}
+
+.list_div {
+	width: 810px;
+	height: 15px;
+	overflow: hidden;
+}
+
+.list_div span {
+	display: inline-block;
+	float: left;
+	margin-top: 2px;
+	text-align: center;
+	font-size: 12px;
+}
+
+.list_div div {
+	float: left;
+	cursor: pointer;
+}
+
+.order {
+	width: 30px;
+	height: 15px;
+	padding-left: 5px;
+}
+
+.video_time {
+	margin-left: 10px;
+	overflow: hidden;
+	width: 150px;
+	height: 15px;
+}
+
+.down_div {
+	margin-left: 10px;
+	display: inline-block;
+	background: url('../../images/tb2_replay/Download.PNG') -6px 3px
+		no-repeat;
+}
+
+.progress_bar {
+	height: 15px;
+}
+
+.ui-progressbar-value {
+	background-image:
+		url(../../images/tb2_replay/ui-bg_gloss-wave_35_f6a828_500x100.png);
+}
+
+.down_div_disabled {
+	margin-left: 15px;
+	height: 15px;
+	width: 14px;
+	background: url('../../images/tb2_replay/Download.PNG') -30px 2px
+		no-repeat;
+	disabled: disabled;
+}
+
+.play_div {
+	width: 2px;
+	display: inline-block;
+	margin-left: 10px;
+	margin-top: 3px;
+	background: url('../../images/tb2_replay/PlayBtn.PNG') 3px -1px
+		no-repeat;
+}

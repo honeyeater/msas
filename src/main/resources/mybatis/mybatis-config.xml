@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+	<!-- 分页插件 -->
+	<plugins>
+		<plugin interceptor="com.github.pagehelper.PageHelper">
+			<property name="dialect" value="mysql" />
+			<property name="pageSizeZero" value="true" />
+			<property name="reasonable" value="true" />
+		</plugin>
+	</plugins>
+
+	<mappers>
+		<mapper resource="com/sinosoft/msas/mappers/PrpMuserMapper.xml" />
+		<mapper resource="com/sinosoft/msas/mappers/PrpMcompanyMapper.xml" />
+		<mapper resource="com/sinosoft/msas/mappers/PrpMclassMapper.xml" />
+		<mapper resource="com/sinosoft/msas/mappers/PrpMriskMapper.xml" />
+		<mapper resource="com/sinosoft/msas/mappers/PrpMcodeMapper.xml" />
+		<mapper resource="com/sinosoft/msas/mappers/PrpMoperatelogMapper.xml" />
+		
+	</mappers>
+</configuration>	
